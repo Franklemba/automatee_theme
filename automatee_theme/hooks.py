@@ -25,8 +25,25 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/automatee_theme/css/automatee_theme.css"
+app_include_css = "/assets/automatee_theme/css/custom.css"
+#app_include_css = "/assets/automatee_theme/css/login.css"
+
 # app_include_js = "/assets/automatee_theme/js/automatee_theme.js"
+
+
+# Override login page
+website_route_rules = [
+    {"from_route": "/login", "to_route": "login"},
+    ]
+
+
+
+
+
+
+
+
+
 
 # include js, css files in header of web template
 # web_include_css = "/assets/automatee_theme/css/automatee_theme.css"
