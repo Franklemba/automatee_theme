@@ -7,7 +7,6 @@
 {% macro email_login_body() -%}
 {% if not disable_user_pass_login or (ldap_settings and ldap_settings.enabled) %}
 
-
 <div class="input-group">
 <input type="text" id="login_email" class="form-control" placeholder="{{ login_name_placeholder or _('jane@example.com') }}" required autofocus autocomplete="username">
 </div>
@@ -35,8 +34,8 @@
 {% endif %}
 {%- endmacro %}
 
-
 {% block page_content %}
+
 <style>
 /* CSS Variables */
 :root {
@@ -61,21 +60,22 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--background-white);
     color: var(--text-dark);
-
+    overflow-x: hidden;
 }
 
 /* hide frappe navbar */
 #page-login{
-  height: 100vh !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
 }
 
 .page-header-wrapper{
-  display: none !important;
-  align-items: none;
+    display: none !important;
+    align-items: none;
 }
 
 .page-header{
-   display: none !important;
+    display: none !important;
 }
 
 .my-4 {
@@ -86,20 +86,23 @@ nav {
     display: none !important;
 }
 
-/* ContainerX Layout */
+/* Container Layout */
 .containerX {
-    display: flex;
+    display: flex !important;
+    min-height: 100vh;
     height: 100vh;
 }
 
 /* Login Panel */
 .login-panel {
-    flex: 1;
-    display: flex;
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     padding: 2rem !important;
     background-color: var(--background-white);
+    min-height: 100vh;
 }
 
 .login-content {
@@ -111,8 +114,16 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     margin-bottom: 2rem !important;
+}
+
+.app-logo {
+    max-height: 80px;
+    max-width: 200px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -139,22 +150,25 @@ nav {
 
 /* Form Section */
 .form-section {
-    margin-bottom: 4rem !important;
+    margin-bottom: 2rem !important;
 }
 
 .form-header {
     margin-bottom: 1.5rem !important;
+    text-align: center;
 }
 
 .form-header h1 {
     font-size: 2rem;
     font-weight: bold;
     color: var(--text-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.2;
 }
 
 .form-header p {
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* Form Styles */
@@ -170,12 +184,13 @@ nav {
 
 .input-group input {
     width: 100% !important;
-    padding: 0.75rem 1rem !important;
+    padding: 0.875rem 1rem !important;
     border: 2px solid var(--border-light);
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     font-size: 1rem;
     background-color: var(--input-bg);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 48px;
 }
 
 .input-group input:focus {
@@ -194,6 +209,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 1rem 0 !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .remember-me {
@@ -203,8 +220,8 @@ nav {
 }
 
 .remember-me input[type="checkbox"] {
-    width: 1rem;
-    height: 1rem;
+    width: 1.125rem;
+    height: 1.125rem;
     accent-color: var(--primary-blue);
 }
 
@@ -212,6 +229,7 @@ nav {
     font-size: 0.875rem;
     color: var(--text-dark);
     cursor: pointer;
+    user-select: none;
 }
 
 .forgot-password {
@@ -219,6 +237,7 @@ nav {
     color: var(--primary-blue);
     text-decoration: none;
     transition: opacity 0.2s ease;
+    white-space: nowrap;
 }
 
 .forgot-password:hover {
@@ -229,15 +248,16 @@ nav {
 /* Login Button */
 .login-button {
     width: 100%;
-    padding: 0.75rem 1rem !important;
+    padding: 0.875rem 1rem !important;
     background-color: var(--accent-yellow);
     color: var(--primary-blue);
     font-size: 1rem;
     font-weight: 600;
     border: none;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     cursor: pointer !important;
     transition: background-color 0.2s ease, transform 0.1s ease;
+    min-height: 48px;
 }
 
 .login-button:hover {
@@ -252,8 +272,9 @@ nav {
 /* Signup Link */
 .signup-link {
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 1.5rem !important;
     font-size: 0.875rem;
+    line-height: 1.5;
 }
 
 .signup-link span {
@@ -275,11 +296,25 @@ nav {
 /* Footer */
 .footer {
     text-align: center;
+    margin-top: 2rem !important;
 }
 
 .footer p {
     font-size: 0.875rem;
     color: var(--text-muted);
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-logo {
+    max-height: 24px;
+    max-width: 120px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
 }
 
 .company {
@@ -288,11 +323,25 @@ nav {
 
 /* Welcome Panel */
 .welcome-panel {
-    padding-left: 2rem;
-    flex: 1;
-    position: relative;
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    position: relative !important;
     background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));
+    background-image: url('/assets/automatee_theme/images/bg_img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Background overlay for better text readability */
+.welcome-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(67, 147, 255, 0.8), rgba(45, 108, 255, 0.9));
+    z-index: 1;
 }
 
 /* Background Pattern */
@@ -300,8 +349,8 @@ nav {
     position: absolute;
     inset: 0;
     opacity: 0.1;
+    z-index: 2;
 }
-
 
 /* Welcome Content */
 .welcome-content {
@@ -320,22 +369,27 @@ nav {
 }
 
 .welcome-text h1 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
     color: white;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .light-text {
     font-weight: normal;
     font-size: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .welcome-text p {
     font-size: 1.125rem;
     opacity: 0.9;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Welcome Footer */
@@ -345,6 +399,8 @@ nav {
     left: 3rem;
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
+    z-index: 10;
 }
 
 .welcome-footer a {
@@ -352,6 +408,7 @@ nav {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: color 0.2s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .welcome-footer a:hover {
@@ -359,20 +416,49 @@ nav {
 }
 
 /* Responsive Design */
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .welcome-text h1 {
+        font-size: 4.5rem !important;
+    }
+    
+    .login-panel {
+        padding: 3rem !important;
+    }
+    
+    .welcome-content {
+        padding: 4rem !important;
+    }
+    
+    .app-logo {
+        max-height: 100px;
+        max-width: 250px;
+    }
+}
+
+/* Medium screens - Tablets */
 @media (max-width: 1024px) {
     .welcome-panel {
         display: none;
     }
     
     .login-panel {
-        flex: none;
-        width: 100%;
+        width: 100% !important;
+        flex: 1;
+        min-height: 100vh;
+        padding: 2rem !important;
+    }
+    
+    .form-section {
+        margin-bottom: 1.5rem !important;
     }
 }
 
-@media (max-width: 640px) {
+/* Small tablets */
+@media (max-width: 768px) {
     .login-panel {
-        padding: 1rem;
+        padding: 1.5rem !important;
     }
     
     .form-header h1 {
@@ -381,20 +467,156 @@ nav {
     
     .form-options {
         flex-direction: column;
-        gap: 1rem;
         align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .app-logo {
+        max-height: 60px;
+        max-width: 150px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+    .containerX {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .welcome-panel {
+        display: none;
+    }
+    
+    .login-panel {
+        width: 100% !important;
+        flex: 1;
+        padding: 1rem !important;
+        min-height: 100vh;
     }
     
     .login-content {
         max-width: none;
+        width: 100%;
+    }
+    
+    .form-header {
+        text-align: left;
+        margin-bottom: 1.25rem !important;
+    }
+    
+    .form-header h1 {
+        font-size: 1.625rem;
+    }
+    
+    .logo {
+        justify-content: flex-start;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .input-group input {
+        padding: 1rem !important;
+        font-size: 1rem;
+    }
+    
+    .login-button {
+        padding: 1rem !important;
+        font-size: 1rem;
+    }
+    
+    .app-logo {
+        max-height: 50px;
+        max-width: 120px;
+    }
+    
+    .footer-logo {
+        max-height: 20px;
+        max-width: 100px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+    .welcome-panel {
+        display: none !important;
+    }
+    
+    .login-panel {
+        width: 100% !important;
+        flex: 1;
+        padding: 0.75rem !important;
+        min-height: 100vh;
+    }
+    
+    .welcome-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .form-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .logo-circle {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    
+    .app-logo {
+        max-height: 40px;
+        max-width: 100px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+    .welcome-panel {
+        display: none;
+    }
+    
+    .form-header h1 {
+        font-size: 1.375rem !important;
+    }
+    
+    .input-group input {
+        padding: 0.875rem !important;
+    }
+    
+    .login-button {
+        padding: 0.875rem !important;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) and (max-width: 1024px) {
+    .containerX {
+        flex-direction: row !important;
+    }
+    
+    .welcome-panel {
+        display: none;
+    }
+    
+    .login-panel {
+        width: 100% !important;
+        flex: 1 !important;
+        min-height: 100vh;
+        padding: 1rem !important;
+    }
+    
+    .form-section {
+        margin-bottom: 1rem !important;
     }
 }
 
 /* Loading and Error States */
 .login-button:disabled {
     opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+    cursor: not-allowed !important;
+    transform: none !important;
 }
 
 .input-error {
@@ -405,7 +627,8 @@ nav {
 .error-message {
     color: hsl(0, 84%, 60%);
     font-size: 0.875rem;
-    margin-top: 0.25rem;
+    margin-top: 0.25rem !important;
+    text-align: left;
 }
 
 /* Focus visible for accessibility */
@@ -413,16 +636,68 @@ nav {
 .forgot-password:focus-visible,
 .signup-link a:focus-visible,
 .welcome-footer a:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 2px;
+    outline: 2px solid var(--primary-blue) !important;
+    outline-offset: 2px !important;
+}
+
+.welcome-panel .login-button:focus-visible,
+.welcome-panel .forgot-password:focus-visible,
+.welcome-panel .signup-link a:focus-visible,
+.welcome-panel .welcome-footer a:focus-visible {
+    outline-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 input:focus-visible {
     outline: none;
 }
 
-</style>
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --border-light: hsl(214, 32%, 70%) !important;
+    }
+    
+    .input-group input {
+        border-width: 3px !important;
+    }
+}
 
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .login-button,
+    .input-group input,
+    .forgot-password,
+    .signup-link a,
+    .welcome-footer a {
+        transition: none !important;
+    }
+    
+    .login-button:hover {
+        transform: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .welcome-panel {
+        display: none;
+    }
+    
+    .containerX {
+        height: auto;
+    }
+    
+    .login-panel {
+        padding: 1rem !important;
+    }
+    
+    .login-button {
+        background-color: transparent;
+        border: 2px solid var(--text-dark);
+        color: var(--text-dark);
+    }
+}
+</style>
 
 <div class="containerX">
 
@@ -431,21 +706,18 @@ input:focus-visible {
 <div class="login-content">
 <!-- Logo -->
 <div class="logo">
-<span class="logo-text">Automate</span>
-<div class="logo-circle">
-<span class="logo-letter">E</span>
-</div>
+<img class="app-logo" src="/assets/automatee_theme/images/automatee.png" alt="AutomateE Logo">
 </div>
 
 <!-- Login Form -->
 <div class="form-section">
 <div class="form-header">
 <h1>{{ _("Login") }}</h1>
- <p>{{ _("Fill in the fields below to sign in") }}</p>
+<p>{{ _("Fill in the fields below to sign in") }}</p>
 </div>
 
 <form class="login-form form-signin form-login" role="form">
- {{ email_login_body() }}
+{{ email_login_body() }}
 </form>
 
 <div class="signup-link">
@@ -456,7 +728,9 @@ input:focus-visible {
 
 <!-- Footer -->
 <div class="footer">
-<p>Powered by <span class="company">Innovative Dynamics</span></p>
+<p>
+<img class="footer-logo" src="/assets/automatee_theme/images/IDlogo.png" alt="Innovative Dynamics">
+</p>
 </div>
 </div>
 </div>
@@ -488,4 +762,3 @@ input:focus-visible {
 {% endblock %}
 
 {% block sidebar %}{% endblock %}
-
