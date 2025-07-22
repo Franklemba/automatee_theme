@@ -91,12 +91,13 @@ nav {
     display: flex !important;
     min-height: 100vh;
     height: 100vh;
+    width: 100vw;
 }
 
 /* Login Panel */
 .login-panel {
     width: 50% !important;
-    flex: 0 0 50% !important;
+    flex: 0 0 50 !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
@@ -415,29 +416,8 @@ nav {
     color: white;
 }
 
+
 /* Responsive Design */
-
-/* Large screens */
-@media (min-width: 1200px) {
-    .welcome-text h1 {
-        font-size: 4.5rem !important;
-    }
-    
-    .login-panel {
-        padding: 3rem !important;
-    }
-    
-    .welcome-content {
-        padding: 4rem !important;
-    }
-    
-    .app-logo {
-        max-height: 100px;
-        max-width: 250px;
-    }
-}
-
-/* Medium screens - Tablets */
 @media (max-width: 1024px) {
     .welcome-panel {
         display: none;
@@ -445,20 +425,14 @@ nav {
     
     .login-panel {
         width: 100% !important;
-        flex: 1;
-        min-height: 100vh;
-        padding: 2rem !important;
-    }
-    
-    .form-section {
-        margin-bottom: 1.5rem !important;
+        flex: 0 0 20 !important;
+        display: flex !impotant;
     }
 }
 
-/* Small tablets */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .login-panel {
-        padding: 1.5rem !important;
+        padding: 1rem;
     }
     
     .form-header h1 {
@@ -467,148 +441,12 @@ nav {
     
     .form-options {
         flex-direction: column;
-        align-items: flex-start;
         gap: 1rem;
-    }
-    
-    .app-logo {
-        max-height: 60px;
-        max-width: 150px;
-    }
-}
-
-/* Mobile phones */
-@media (max-width: 640px) {
-    .containerX {
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .welcome-panel {
-        display: none;
-    }
-    
-    .login-panel {
-        width: 100% !important;
-        flex: 1;
-        padding: 1rem !important;
-        min-height: 100vh;
+        align-items: flex-start;
     }
     
     .login-content {
         max-width: none;
-        width: 100%;
-    }
-    
-    .form-header {
-        text-align: left;
-        margin-bottom: 1.25rem !important;
-    }
-    
-    .form-header h1 {
-        font-size: 1.625rem;
-    }
-    
-    .logo {
-        justify-content: flex-start;
-        margin-bottom: 1.5rem !important;
-    }
-    
-    .input-group input {
-        padding: 1rem !important;
-        font-size: 1rem;
-    }
-    
-    .login-button {
-        padding: 1rem !important;
-        font-size: 1rem;
-    }
-    
-    .app-logo {
-        max-height: 50px;
-        max-width: 120px;
-    }
-    
-    .footer-logo {
-        max-height: 20px;
-        max-width: 100px;
-    }
-}
-
-/* Very small phones */
-@media (max-width: 480px) {
-    .welcome-panel {
-        display: none !important;
-    }
-    
-    .login-panel {
-        width: 100% !important;
-        flex: 1;
-        padding: 0.75rem !important;
-        min-height: 100vh;
-    }
-    
-    .welcome-text h1 {
-        font-size: 1.5rem;
-    }
-    
-    .form-header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .logo-text {
-        font-size: 1.25rem;
-    }
-    
-    .logo-circle {
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-    
-    .app-logo {
-        max-height: 40px;
-        max-width: 100px;
-    }
-}
-
-/* Extra small screens */
-@media (max-width: 360px) {
-    .welcome-panel {
-        display: none;
-    }
-    
-    .form-header h1 {
-        font-size: 1.375rem !important;
-    }
-    
-    .input-group input {
-        padding: 0.875rem !important;
-    }
-    
-    .login-button {
-        padding: 0.875rem !important;
-    }
-}
-
-/* Landscape orientation on mobile */
-@media (max-height: 600px) and (orientation: landscape) and (max-width: 1024px) {
-    .containerX {
-        flex-direction: row !important;
-    }
-    
-    .welcome-panel {
-        display: none;
-    }
-    
-    .login-panel {
-        width: 100% !important;
-        flex: 1 !important;
-        min-height: 100vh;
-        padding: 1rem !important;
-    }
-    
-    .form-section {
-        margin-bottom: 1rem !important;
     }
 }
 
