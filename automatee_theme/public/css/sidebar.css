@@ -1,11 +1,11 @@
 .container.page-body {
   width: 100%;
-  background-color: purple;
+  background-color: #F1F4F6;
 }
 .layout-main {
   display: flex;
   width: 100vw;
-  background-color: red;
+/*   background-color: red; */
   padding: 10px;
   gap: 16px;
   box-sizing: border-box;
@@ -21,11 +21,11 @@
   box-sizing: border-box;
 }
 .list-sidebar{
-  background-color: purple;
+/*   background-color: purple; */
 }
 
 .sidebar-item-container{
-  background-color: green;
+/*   background-color: green; */
   margin-top: 4px;
 /*   align-content: center; */
 }
@@ -48,8 +48,16 @@
     .item-anchor{
     color: #ffff !important;
   }
+  
+  .sidebar-item-control button .es-icon{
+  stroke: #FFD203;
+  
+  }
+  
 
 }
+
+
 
 .desk-sidebar-item.selected > .item-anchor{
   color: #ffff !important;
@@ -70,7 +78,10 @@
   .item-anchor{
   color: #ffff !important;
 }
-
+.sidebar-item-control button .es-icon{
+  stroke: #FFD203;
+  
+  }
   
 }
 
