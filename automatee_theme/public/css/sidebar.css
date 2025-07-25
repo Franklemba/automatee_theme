@@ -1,12 +1,10 @@
-/* sidebar.css - Sidebar Customization */
-
 .container.page-body {
   width: 100%;
   background-color: purple;
 }
 .layout-main {
   display: flex;
-  width: fit-content;
+  width: 100vw;
   background-color: red;
   padding: 10px;
   gap: 16px;
@@ -15,13 +13,76 @@
 
 .layout-main > .layout-side-section {
   flex: 0 0 30% !important;  /* force 30% width */
-  max-width: 22% !important;
-  background-color: blue;
+  max-width: 281px !important;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 26px;
   box-sizing: border-box;
 }
+.list-sidebar{
+  background-color: purple;
+}
+
+.sidebar-item-container{
+  background-color: green;
+  margin-top: 4px;
+/*   align-content: center; */
+}
+
+.desk-sidebar-item{
+  padding: 6px !important;;
+/*   background-color: orange; */
+}
+
+.desk-sidebar-item.selected{
+/*   padding: 6px !important;; */
+  background-color: var(--navbar-bg) !important;
+  
+  .sidebar-item-icon .icon-md{
+  /*   color:  !important; */
+    fill: none !important;
+    --icon-stroke:  #FFD203  !important;
+    stroke-width: 2px;
+  }
+    .item-anchor{
+    color: #ffff !important;
+  }
+
+}
+
+.desk-sidebar-item.selected > .item-anchor{
+  color: #ffff !important;
+}
+
+
+
+
+.sidebar-item-container:hover > .desk-sidebar-item{
+ background-color: var(--navbar-bg);
+  
+  .sidebar-item-icon .icon-md{
+/*   color:  !important; */
+  fill: none !important;
+  --icon-stroke:  #FFD203  !important;
+  stroke-width: 2px;
+}
+  .item-anchor{
+  color: #ffff !important;
+}
+
+  
+}
+
+.sidebar-item-container:hover > .desk-sidebar-item{
+ background-color: var(--navbar-bg);
+}
+
+.sidebar-item-container:hover > .item-anchor{
+  color: #ffff !important;
+}
+
+
 
 /* Same for main section */
 .layout-main > .layout-main-section {
@@ -32,4 +93,3 @@
   padding: 16px;
   box-sizing: border-box;
 }
-
