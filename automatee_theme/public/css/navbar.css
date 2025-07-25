@@ -1,0 +1,31 @@
+/* navbar.css - Navigation Bar Customization */
+
+/* Basic Navbar Styling */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--navbar-border) !important;
+  box-shadow: 0 2px 4px var(--navbar-shadow) !important;
+  height: 70px !important;
+}
+
+
+.app-logo {
+  height: 44px !important;
+}
+
+/* Navbar Responsive Design */
+@media (max-width: 900px) {
+  .custom-navbar-container {
+    padding: 0 10px !important;
+  }
+  
+  .custom-navbar-search {
+    margin-right: 10px !important;
+    max-width: 200px !important;
+    margin-left: 0 !important;
+  }
+  
+  .custom-navbar-user-box {
+    padding: 6px 8px !important;
+  }
+}

@@ -1,0 +1,35 @@
+/* sidebar.css - Sidebar Customization */
+
+.container.page-body {
+  width: 100%;
+  background-color: purple;
+}
+.layout-main {
+  display: flex;
+  width: fit-content;
+  background-color: red;
+  padding: 10px;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.layout-main > .layout-side-section {
+  flex: 0 0 30% !important;  /* force 30% width */
+  max-width: 22% !important;
+  background-color: blue;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 26px;
+  box-sizing: border-box;
+}
+
+/* Same for main section */
+.layout-main > .layout-main-section {
+  flex: 0 0 70%;
+  max-width: 70%;
+  background-color: green;
+  border-radius: 10px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
