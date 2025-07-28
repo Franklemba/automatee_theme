@@ -1,0 +1,55 @@
+
+
+/* Same for main section */
+.layout-main > .layout-main-section-wrapper {
+  flex: 0 0 70%;
+  max-width: 70%;
+  margin-top: 10px;
+/*   background-color: green; */
+  border-radius: 10px;
+/*   padding: 16px; */
+  box-sizing: border-box;
+}
+
+.layout-main > .layout-main-section-wrapper > .layout-main-section{
+  background-color: #F1F4F6;
+  border: none;
+}
+
+/*shortcut links edits*/
+.shortcut-widget-box{
+  background-color: var(--navbar-bg) !important;
+  padding: 6% !important;
+  width: fit-content;
+  color: white !important;
+ 
+}
+
+.shortcut-widget-box .widget-head .widget-title span{
+  color: white;
+  font-weight: 600;
+}
+
+.shortcut-widget-box .widget-head .widget-control svg{
+/*   font-weight: 600; */
+  stroke: white;
+}
+
+.shortcut-widget-box:hover {
+  
+  .widget-head .widget-title span, .widget-head .widget-control svg{
+  color: #FFD203 !important;
+  stroke: #FFD203 !important;
+}
+
+}
+
+/*Widget edits*/
+
+.widget {
+    border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 26px;
+}
+
+
