@@ -1,9 +1,7 @@
-
-
 /* Same for main section */
 .layout-main > .layout-main-section-wrapper {
-  flex: 0 0 70%;
-  max-width: 70%;
+  flex: 0 0 77%;
+  max-width: 78%;
   margin-top: 10px;
 /*   background-color: green; */
   border-radius: 10px;
@@ -52,4 +50,23 @@
   padding: 26px;
 }
 
+.widget.custom-block-widget-box{
+  width: fit-content !important;
+  height: fit-content !important;
+}
 
+.widget.dashboard-widget-box{
+/*   background-color: green; */
+}
+
+.widget.dashboard-widget-box .widget-title span{
+   color: #F29425 !important;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+  /* Page-form customizations */
+.page-form {
+  background-color: var(--navbar-bg) !important;
+  padding-bottom: 20px;
+}

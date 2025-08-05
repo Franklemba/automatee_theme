@@ -13,7 +13,7 @@
 
 
 .layout-main > .layout-side-section {
-  flex: 0 0 30% !important;  /* force 30% width */
+  flex: 0 0 20% !important;  /* force 30% width */
   max-width: 20% !important;
   background-color: #ffffff;
   border-radius: 12px;
@@ -25,16 +25,7 @@
 }
 
 /* Same for main section */
-.layout-main > .layout-main-section-wrapper {
-  flex: 0 0 70%;
-  max-width: 70%;
-  margin-top: 10px;
-  margin-left: 10px;
-/*   background-color: green; */
-  border-radius: 10px;
-/*   padding: 16px; */
-  box-sizing: border-box;
-}
+
 
 
 .list-sidebar{
