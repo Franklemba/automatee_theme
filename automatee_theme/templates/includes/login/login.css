@@ -1,13 +1,30 @@
-/* CSS Variables */
+/* CSS Variables - REA Theme Colors */
 :root {
-    --primary-blue: hsl(210, 100%, 45%);
-    --primary-blue-light: hsl(210, 100%, 65%);
-    --accent-yellow: hsl(45, 100%, 50%);
-    --background-white: hsl(0, 0%, 100%);
-    --text-dark: hsl(222, 84%, 5%);
-    --text-muted: hsl(215, 16%, 47%);
-    --border-light: hsl(214, 32%, 91%);
-    --input-bg: hsl(0, 0%, 100%);
+    /* Primary Colors */
+    --manz: #f0e76a;
+    --sandwisp: #f4ec95;
+    --mine-shaft: #231f1f;
+    --surf-crest: #cbe5d2;
+    --copper: #bf7844;
+    --finlandia: #546a57;
+    --corn-field: #f8f4c5;
+    --barley-corn: #a69b55;
+    --spring-rain: #a1ccad;
+    
+    /* Semantic Colors */
+    --primary-blue: var(--finlandia);
+    --primary-blue-light: var(--spring-rain);
+    --accent-yellow: var(--manz);
+    --background-white: var(--corn-field);
+    --text-dark: var(--mine-shaft);
+    --text-muted: var(--barley-corn);
+    --border-light: var(--surf-crest);
+    --input-bg: #ffffff;
+    
+    /* Navigation and Hover Colors (Greenish) */
+    --nav-bg: var(--finlandia);
+    --nav-hover: var(--spring-rain);
+    --nav-active: var(--surf-crest);
 }
 
 /* Reset and Base Styles */
@@ -118,8 +135,8 @@ body {
 
 .input-group input:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px hsla(210, 100%, 45%, 0.1);
+    border-color: var(--finlandia);
+    box-shadow: 0 0 0 3px rgba(84, 106, 87, 0.1);
 }
 
 .input-group input::placeholder {
@@ -143,7 +160,7 @@ body {
 .remember-me input[type="checkbox"] {
     width: 1rem;
     height: 1rem;
-    accent-color: var(--primary-blue);
+    accent-color: var(--finlandia);
 }
 
 .remember-me label {
@@ -154,13 +171,13 @@ body {
 
 .forgot-password {
     font-size: 0.875rem;
-    color: var(--primary-blue);
+    color: var(--finlandia);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .forgot-password:hover {
-    opacity: 0.8;
+    color: var(--spring-rain);
     text-decoration: underline;
 }
 
@@ -168,8 +185,8 @@ body {
 .login-button {
     width: 100%;
     padding: 0.75rem 1rem;
-    background-color: var(--accent-yellow);
-    color: var(--primary-blue);
+    background-color: var(--finlandia);
+    color: white;
     font-size: 1rem;
     font-weight: 600;
     border: none;
@@ -179,7 +196,7 @@ body {
 }
 
 .login-button:hover {
-    background-color: hsl(45, 100%, 45%);
+    background-color: var(--spring-rain);
     transform: translateY(-1px);
 }
 
@@ -199,14 +216,14 @@ body {
 }
 
 .signup-link a {
-    color: var(--primary-blue);
+    color: var(--finlandia);
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .signup-link a:hover {
-    opacity: 0.8;
+    color: var(--spring-rain);
     text-decoration: underline;
 }
 

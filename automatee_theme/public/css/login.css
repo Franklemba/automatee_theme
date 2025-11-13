@@ -1,14 +1,31 @@
 
-/* CSS Variables */
+/* CSS Variables - REA Theme Colors */
 :root {
-    --primary-blue: hsl(210, 100%, 45%);
-    --primary-blue-light: hsl(210, 100%, 65%);
-    --accent-yellow: hsl(45, 100%, 50%);
-    --background-white: hsl(0, 0%, 100%);
-    --text-dark: hsl(222, 84%, 5%);
-    --text-muted: hsl(215, 16%, 47%);
-    --border-light: hsl(214, 32%, 91%);
-    --input-bg: hsl(0, 0%, 100%);
+    /* Primary Colors */
+    --manz: #f0e76a;
+    --sandwisp: #f4ec95;
+    --mine-shaft: #231f1f;
+    --surf-crest: #cbe5d2;
+    --copper: #bf7844;
+    --finlandia: #546a57;
+    --corn-field: #f8f4c5;
+    --barley-corn: #a69b55;
+    --spring-rain: #a1ccad;
+    
+    /* Semantic Colors */
+    --primary-blue: var(--finlandia);
+    --primary-blue-light: var(--spring-rain);
+    --accent-yellow: var(--manz);
+    --background-white: var(--corn-field);
+    --text-dark: var(--mine-shaft);
+    --text-muted: var(--barley-corn);
+    --border-light: var(--surf-crest);
+    --input-bg: #ffffff;
+    
+    /* Navigation and Hover Colors (Greenish) */
+    --nav-bg: var(--finlandia);
+    --nav-hover: var(--spring-rain);
+    --nav-active: var(--surf-crest);
 }
 
 /* Reset and Base Styles */
@@ -158,8 +175,8 @@ nav {
 
 .input-group input:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px hsla(210, 100%, 45%, 0.1);
+    border-color: var(--finlandia);
+    box-shadow: 0 0 0 3px rgba(84, 106, 87, 0.1);
 }
 
 .input-group input::placeholder {
@@ -185,7 +202,7 @@ nav {
 .remember-me input[type="checkbox"] {
     width: 1.125rem;
     height: 1.125rem;
-    accent-color: var(--primary-blue);
+    accent-color: var(--finlandia);
 }
 
 .remember-me label {
@@ -197,14 +214,14 @@ nav {
 
 .forgot-password {
     font-size: 0.875rem;
-    color: var(--primary-blue);
+    color: var(--finlandia);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
     white-space: nowrap;
 }
 
 .forgot-password:hover {
-    opacity: 0.8;
+    color: var(--spring-rain);
     text-decoration: underline;
 }
 
@@ -212,8 +229,8 @@ nav {
 .login-button {
     width: 100%;
     padding: 0.875rem 1rem !important;
-    background-color: var(--accent-yellow);
-    color: var(--primary-blue);
+    background-color: var(--finlandia);
+    color: white;
     font-size: 1rem;
     font-weight: 600;
     border: none;
@@ -224,7 +241,7 @@ nav {
 }
 
 .login-button:hover {
-    background-color: hsl(45, 100%, 45%);
+    background-color: var(--spring-rain);
     transform: translateY(-1px);
 }
 
@@ -245,14 +262,14 @@ nav {
 }
 
 .signup-link a {
-    color: var(--primary-blue);
+    color: var(--finlandia);
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .signup-link a:hover {
-    opacity: 0.8;
+    color: var(--spring-rain);
     text-decoration: underline;
 }
 
@@ -290,7 +307,7 @@ nav {
     flex: 0 0 50% !important;
     position: relative !important;
     background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));
-    background-image: url('/assets/automatee_theme/images/bg_img.png');
+    background-image: url('/assets/automatee_theme/images/448792447_786481193625158_1979285041543738236_n.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -303,7 +320,7 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(67, 147, 255, 0.8), rgba(45, 108, 255, 0.9));
+    background: linear-gradient(135deg, rgba(84, 106, 87, 0.7), rgba(161, 204, 173, 0.8));
     z-index: 1;
 }
 
@@ -436,7 +453,7 @@ nav {
 .forgot-password:focus-visible,
 .signup-link a:focus-visible,
 .welcome-footer a:focus-visible {
-    outline: 2px solid var(--primary-blue) !important;
+    outline: 2px solid var(--finlandia) !important;
     outline-offset: 2px !important;
 }
 

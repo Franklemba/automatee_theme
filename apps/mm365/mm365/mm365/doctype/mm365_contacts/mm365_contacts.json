@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-01-27 10:00:00.000000",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info",
+  "column_break_3",
+  "contact_details",
+  "section_break_5",
+  "referral_info",
+  "column_break_7",
+  "loan_officer_info",
+  "section_break_9",
+  "referral_links"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "referral_info",
+   "fieldtype": "Section Break",
+   "label": "Referral Information"
+  },
+  {
+   "fieldname": "referred_by_realtor",
+   "fieldtype": "Link",
+   "label": "Referred By Realtor",
+   "options": "MM365 Realtors"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loan_officer_info",
+   "fieldtype": "Section Break",
+   "label": "Loan Officer Information"
+  },
+  {
+   "fieldname": "referred_by_loan_officer",
+   "fieldtype": "Data",
+   "label": "Referred By Loan Officer"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "referral_links",
+   "fieldtype": "Section Break",
+   "label": "Referral Links"
+  },
+  {
+   "fieldname": "homeowners_referral_link",
+   "fieldtype": "Data",
+   "label": "Homeowners Referral Link",
+   "read_only": 1
+  },
+  {
+   "fieldname": "homebuyers_referral_link",
+   "fieldtype": "Data",
+   "label": "Homebuyers Referral Link",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-27 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "MM365",
+ "name": "MM365 Contacts",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
