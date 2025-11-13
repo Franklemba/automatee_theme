@@ -25,6 +25,9 @@
     --nav-bg: var(--finlandia);
     --nav-hover: var(--spring-rain);
     --nav-active: var(--surf-crest);
+    
+    /* Button Hover Color */
+    --button-hover: #2596be;
 }
 
 /* Reset and Base Styles */
@@ -196,8 +199,9 @@ body {
 }
 
 .login-button:hover {
-    background-color: var(--spring-rain);
+    background-color: var(--button-hover);
     transform: translateY(-1px);
+    color: white;
 }
 
 .login-button:active {

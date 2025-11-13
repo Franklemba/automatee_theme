@@ -1,45 +1,27 @@
-/* variables.css - Central CSS Variables */
+/* variables.css - CSS Variables for Navbar and Login Only */
 :root {
-  /* Primary Colors */
-  --primary-color: #2196F3;
-  --primary-light: #64B5F6;
-  --primary-dark: #1976D2;
+  /* Base Theme Colors (for navbar and login) */
+  --finlandia: #546a57;
+  --spring-rain: #a1ccad;
+  --surf-crest: #cbe5d2;
+  --manz: #a1ccad;
+  --mine-shaft: #231f1f;
+  --corn-field: #f8f4c5;
   
-  /* Secondary Colors */
-  --secondary-color: #00BCD4;
-  --secondary-light: #4DD0E1;
-  --secondary-dark: #0097A7;
-  
-  /* Text Colors */
-  --text-color: #2C3E50;
-  --text-muted: #7F8C8D;
-  --text-light: #FFFFFF;
-  --text-success: #27AE60;
-  --text-warning: #F39C12;
-  --text-danger: #E74C3C;
-  
-  /* Background Colors */
-  --bg-color: #F1F4F6;
-  
-  /* Navigation Colors */
-  --navbar-bg: #2196F3;
-  --navbar-border: #E9ECEF;
+  /* Navigation Colors - ONLY for navbar */
+  --navbar-bg: var(--finlandia);
+  --navbar-border: var(--surf-crest);
   --navbar-shadow: rgba(0, 0, 0, 0.1);
-  --navbar-custom-bg: #2E95ED;
-  --navbar-custom-shadow: rgba(46,149,237,0.08);
+  --navbar-hover: var(--spring-rain);
+  --navbar-active: var(--surf-crest);
+  --navbar-custom-bg: var(--finlandia);
+  --navbar-custom-shadow: rgba(84, 106, 87, 0.08);
   --navbar-custom-user-bg: #fff;
-  --navbar-custom-user-color: #222;
+  --navbar-custom-user-color: var(--mine-shaft);
   
-  /* Sidebar Colors */
-  --sidebar-bg: #FFFFFF;
-  --sidebar-text: #FFFFFF;
-  --sidebar-hover: #1f3edb;
-  --sidebar-active: #1f3edb;
-  --sidebar-border: #34495E;
+  /* Accent Color for navbar notifications */
+  --accent-yellow: var(--manz);
   
-  /* Search Colors */
-  --search-placeholder: #e0e0e0;
-  
-  /* Shadows */
-  --custom-shadow-blue: rgba(33, 150, 243, 0.3);
+  /* Login page uses its own variables defined in login.css */
+  /* Main section uses Frappe defaults - no variables applied */
 }

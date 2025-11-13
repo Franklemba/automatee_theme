@@ -1,9 +1,8 @@
 
 
 @import 'variables.css';  
-@import 'base.css';      
-@import 'navbar.css';     
-@import 'sidebar.css';    
-@import 'main_section.css';
+@import 'navbar.css';
+/* Only navbar and login.css have custom styles */
+/* Main section uses Frappe defaults - no customizations */
 
 

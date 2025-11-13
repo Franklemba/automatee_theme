@@ -41,19 +41,19 @@
 }
 .dropdown-menu.notifications-list .notification-list-header ul li:hover {
 /*    color: black !important; */
-     color: #FFD203 !important;
+     color: var(--accent-yellow) !important;
     font-weight: 600; 
 }
 
 .dropdown-menu.notifications-list .notification-list-header ul .active  {
-    color: #FFD203 !important;
+    color: var(--accent-yellow) !important;
     font-weight: 600; 
 }
 
 .dropdown-menu.notifications-list .notification-list-body .notification-timestamp {
-    color: #FFD203 !important;
+    color: var(--accent-yellow) !important;
 }
 
 .dropdown-menu.notifications-list .notification-list-body .list-footer .full-log-btn {
-    color: #FFD203 !important;
+    color: var(--accent-yellow) !important;
 }
