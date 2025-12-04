@@ -1,34 +1,36 @@
 
-/* CSS Variables - REA Theme Colors */
+/* CSS Variables - Nkana Blue Theme Colors */
 :root {
-    /* Primary Colors */
-    --manz: #a1ccad;
-    --sandwisp: #f4ec95;
+    /* Primary Blue Colors */
+    --primary-blue: #2596be;
+    --primary-blue-light: #4db8d9;
+    --primary-blue-dark: #1e7a9a;
+    --blue-accent: #5fc4e0;
+    --blue-light: #a8d8e8;
+    --blue-lighter: #d4e8f0;
     --mine-shaft: #231f1f;
-    --surf-crest: #cbe5d2;
-    --copper: #bf7844;
-    --finlandia: #546a57;
     --corn-field: #f8f4c5;
-    --barley-corn: #a69b55;
-    --spring-rain: #a1ccad;
+    --text-muted-blue: #6b9fb8;
     
-    /* Semantic Colors */
-    --primary-blue: var(--finlandia);
-    --primary-blue-light: var(--spring-rain);
-    --accent-yellow: var(--manz);
+    /* Semantic Colors - Blue Theme */
+    --primary-color: var(--primary-blue);
+    --primary-color-light: var(--primary-blue-light);
+    --accent-color: var(--blue-accent);
     --background-white: var(--corn-field);
     --text-dark: var(--mine-shaft);
-    --text-muted: var(--barley-corn);
-    --border-light: var(--surf-crest);
+    --text-muted: var(--text-muted-blue);
+    --border-light: var(--blue-light);
     --input-bg: #ffffff;
     
-    /* Navigation and Hover Colors (Greenish) */
-    --nav-bg: var(--finlandia);
-    --nav-hover: var(--spring-rain);
-    --nav-active: var(--surf-crest);
+    /* Navigation and Hover Colors (Blue) */
+    --nav-bg: var(--primary-blue);
+    --nav-hover: var(--primary-blue-light);
+    --nav-active: var(--blue-light);
     
-    /* Button Hover Color */
-    --button-hover: #2596be;
+    /* Button Hover Color - Navy Blue */
+    --button-hover: #1a4d6e;
+    --button-bg: var(--primary-blue);
+    --navy-blue: #1a4d6e;
 }
 
 /* Reset and Base Styles */
@@ -178,8 +180,8 @@ nav {
 
 .input-group input:focus {
     outline: none;
-    border-color: var(--finlandia);
-    box-shadow: 0 0 0 3px rgba(84, 106, 87, 0.1);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 150, 190, 0.1);
 }
 
 .input-group input::placeholder {
@@ -205,7 +207,7 @@ nav {
 .remember-me input[type="checkbox"] {
     width: 1.125rem;
     height: 1.125rem;
-    accent-color: var(--finlandia);
+    accent-color: var(--primary-blue);
 }
 
 .remember-me label {
@@ -217,14 +219,14 @@ nav {
 
 .forgot-password {
     font-size: 0.875rem;
-    color: var(--finlandia);
+    color: var(--primary-blue);
     text-decoration: none;
     transition: color 0.2s ease;
     white-space: nowrap;
 }
 
 .forgot-password:hover {
-    color: var(--spring-rain);
+    color: var(--primary-blue-light);
     text-decoration: underline;
 }
 
@@ -232,7 +234,7 @@ nav {
 .login-button {
     width: 100%;
     padding: 0.875rem 1rem !important;
-    background-color: var(--finlandia);
+    background-color: var(--primary-blue);
     color: white;
     font-size: 1rem;
     font-weight: 600;
@@ -266,14 +268,14 @@ nav {
 }
 
 .signup-link a {
-    color: var(--finlandia);
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .signup-link a:hover {
-    color: var(--spring-rain);
+    color: var(--primary-blue-light);
     text-decoration: underline;
 }
 
@@ -311,7 +313,7 @@ nav {
     flex: 0 0 50% !important;
     position: relative !important;
     background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));
-    background-image: url('/assets/automatee_theme/images/448792447_786481193625158_1979285041543738236_n.jpg');
+    background-image: url('/assets/automatee_theme/images/nakana_n.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -324,7 +326,7 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(84, 106, 87, 0.7), rgba(161, 204, 173, 0.8));
+    background: linear-gradient(135deg, rgba(37, 150, 190, 0.7), rgba(77, 184, 217, 0.8));
     z-index: 1;
 }
 
@@ -457,7 +459,7 @@ nav {
 .forgot-password:focus-visible,
 .signup-link a:focus-visible,
 .welcome-footer a:focus-visible {
-    outline: 2px solid var(--finlandia) !important;
+    outline: 2px solid var(--primary-blue) !important;
     outline-offset: 2px !important;
 }
 
