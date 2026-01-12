@@ -1,36 +1,37 @@
 
-/* CSS Variables - Nkana Blue Theme Colors */
+/* CSS Variables - FAZ Green Theme Colors */
 :root {
-    /* Primary Blue Colors */
-    --primary-blue: #2596be;
-    --primary-blue-light: #4db8d9;
-    --primary-blue-dark: #1e7a9a;
-    --blue-accent: #5fc4e0;
-    --blue-light: #a8d8e8;
-    --blue-lighter: #d4e8f0;
+    /* Primary FAZ Green Colors */
+    --faz-green: #00A651;
+    --faz-green-light: #33B874;
+    --faz-green-dark: #008040;
+    --faz-green-darker: #006630;
+    --faz-green-accent: #4DC88A;
+    --faz-green-light-bg: #B3E6CC;
+    --faz-green-lighter: #D9F2E6;
     --mine-shaft: #231f1f;
     --corn-field: #f8f4c5;
-    --text-muted-blue: #6b9fb8;
+    --text-muted-green: #66C999;
     
-    /* Semantic Colors - Blue Theme */
-    --primary-color: var(--primary-blue);
-    --primary-color-light: var(--primary-blue-light);
-    --accent-color: var(--blue-accent);
+    /* Semantic Colors - FAZ Green Theme */
+    --primary-color: var(--faz-green);
+    --primary-color-light: var(--faz-green-light);
+    --accent-color: var(--faz-green-accent);
     --background-white: var(--corn-field);
     --text-dark: var(--mine-shaft);
-    --text-muted: var(--text-muted-blue);
-    --border-light: var(--blue-light);
+    --text-muted: var(--text-muted-green);
+    --border-light: var(--faz-green-light-bg);
     --input-bg: #ffffff;
     
-    /* Navigation and Hover Colors (Blue) */
-    --nav-bg: var(--primary-blue);
-    --nav-hover: var(--primary-blue-light);
-    --nav-active: var(--blue-light);
+    /* Navigation and Hover Colors (FAZ Green) */
+    --nav-bg: var(--faz-green);
+    --nav-hover: var(--faz-green-light);
+    --nav-active: var(--faz-green-light-bg);
     
-    /* Button Hover Color - Navy Blue */
-    --button-hover: #1a4d6e;
-    --button-bg: var(--primary-blue);
-    --navy-blue: #1a4d6e;
+    /* Button Hover Color - FAZ Green Dark */
+    --button-hover: var(--faz-green-dark);
+    --button-bg: var(--faz-green);
+    --navy-blue: var(--faz-green-darker);
 }
 
 /* Reset and Base Styles */
@@ -114,7 +115,7 @@ nav {
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-blue);
+    color: var(--faz-green);
 }
 
 .logo-circle {
@@ -180,8 +181,8 @@ nav {
 
 .input-group input:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(37, 150, 190, 0.1);
+    border-color: var(--faz-green);
+    box-shadow: 0 0 0 3px rgba(0, 166, 81, 0.1);
 }
 
 .input-group input::placeholder {
@@ -207,7 +208,7 @@ nav {
 .remember-me input[type="checkbox"] {
     width: 1.125rem;
     height: 1.125rem;
-    accent-color: var(--primary-blue);
+    accent-color: var(--faz-green);
 }
 
 .remember-me label {
@@ -219,14 +220,14 @@ nav {
 
 .forgot-password {
     font-size: 0.875rem;
-    color: var(--primary-blue);
+    color: var(--faz-green);
     text-decoration: none;
     transition: color 0.2s ease;
     white-space: nowrap;
 }
 
 .forgot-password:hover {
-    color: var(--primary-blue-light);
+    color: var(--faz-green-light);
     text-decoration: underline;
 }
 
@@ -234,7 +235,7 @@ nav {
 .login-button {
     width: 100%;
     padding: 0.875rem 1rem !important;
-    background-color: var(--primary-blue);
+    background-color: var(--faz-green);
     color: white;
     font-size: 1rem;
     font-weight: 600;
@@ -268,14 +269,14 @@ nav {
 }
 
 .signup-link a {
-    color: var(--primary-blue);
+    color: var(--faz-green);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .signup-link a:hover {
-    color: var(--primary-blue-light);
+    color: var(--faz-green-light);
     text-decoration: underline;
 }
 
@@ -458,7 +459,7 @@ nav {
 .forgot-password:focus-visible,
 .signup-link a:focus-visible,
 .welcome-footer a:focus-visible {
-    outline: 2px solid var(--primary-blue) !important;
+    outline: 2px solid var(--faz-green) !important;
     outline-offset: 2px !important;
 }
 
