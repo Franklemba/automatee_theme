@@ -1,29 +1,28 @@
-/* variables.css - CSS Variables for Navbar and Login Only - Nkana Blue Theme */
+/* variables.css - CSS Variables for Navbar and Login Only - FAZ Green Theme */
 :root {
-  /* Base Theme Colors - Nkana Blue (for navbar and login) */
-  --primary-blue: #2596be;
-  --primary-blue-light: #4db8d9;
-  --primary-blue-dark: #1e7a9a;
-  --navy-blue: #1a4d6e;
-  --navy-blue-dark: #0f2d44;
-  --blue-accent: #5fc4e0;
-  --blue-light: #a8d8e8;
+  /* Base Theme Colors - FAZ Green (for navbar and login) */
+  --faz-green: #00A651;
+  --faz-green-light: #33B874;
+  --faz-green-dark: #008040;
+  --faz-green-darker: #006630;
+  --faz-green-accent: #4DC88A;
+  --faz-green-light-bg: #B3E6CC;
   --mine-shaft: #231f1f;
   --corn-field: #f8f4c5;
   
-  /* Navigation Colors - ONLY for navbar - Blue Theme */
-  --navbar-bg: var(--primary-blue);
-  --navbar-border: var(--blue-light);
+  /* Navigation Colors - ONLY for navbar - FAZ Green Theme */
+  --navbar-bg: var(--faz-green);
+  --navbar-border: var(--faz-green-light-bg);
   --navbar-shadow: rgba(0, 0, 0, 0.1);
-  --navbar-hover: var(--navy-blue);
-  --navbar-active: var(--blue-light);
-  --navbar-custom-bg: var(--primary-blue);
-  --navbar-custom-shadow: rgba(37, 150, 190, 0.08);
+  --navbar-hover: var(--faz-green-dark);
+  --navbar-active: var(--faz-green-light-bg);
+  --navbar-custom-bg: var(--faz-green);
+  --navbar-custom-shadow: rgba(0, 166, 81, 0.08);
   --navbar-custom-user-bg: #fff;
   --navbar-custom-user-color: var(--mine-shaft);
   
-  /* Accent Color for navbar notifications - Blue */
-  --accent-yellow: var(--blue-accent);
+  /* Accent Color for navbar notifications - FAZ Green */
+  --accent-yellow: var(--faz-green-accent);
   
   /* Login page uses its own variables defined in login.css */
   /* Main section uses Frappe defaults - no variables applied */
