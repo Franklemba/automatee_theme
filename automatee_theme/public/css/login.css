@@ -9,6 +9,51 @@
     --text-muted: hsl(215, 16%, 47%);
     --border-light: hsl(214, 32%, 91%);
     --input-bg: hsl(0, 0%, 100%);
+    --surface-panel: hsl(0, 0%, 100%);
+    --surface-card: hsl(0, 0%, 100%);
+    --text-primary: hsl(222, 84%, 5%);
+    --text-secondary: hsl(215, 16%, 47%);
+    --link-color: hsl(210, 100%, 45%);
+    --overlay-welcome-start: rgba(67, 147, 255, 0.8);
+    --overlay-welcome-end: rgba(45, 108, 255, 0.9);
+    --feedback-success: hsl(142, 70%, 35%);
+    --feedback-danger: hsl(0, 84%, 60%);
+}
+
+html[data-theme="dark"] {
+    --background-white: hsl(222, 24%, 10%);
+    --surface-panel: hsl(222, 24%, 12%);
+    --surface-card: hsl(222, 22%, 14%);
+    --text-dark: hsl(210, 20%, 92%);
+    --text-primary: hsl(210, 20%, 92%);
+    --text-muted: hsl(215, 15%, 72%);
+    --text-secondary: hsl(215, 15%, 72%);
+    --border-light: hsl(215, 20%, 28%);
+    --input-bg: hsl(222, 22%, 16%);
+    --link-color: hsl(210, 100%, 70%);
+    --overlay-welcome-start: rgba(10, 20, 35, 0.82);
+    --overlay-welcome-end: rgba(5, 14, 24, 0.92);
+    --feedback-success: hsl(142, 62%, 62%);
+    --feedback-danger: hsl(0, 86%, 72%);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) {
+        --background-white: hsl(222, 24%, 10%);
+        --surface-panel: hsl(222, 24%, 12%);
+        --surface-card: hsl(222, 22%, 14%);
+        --text-dark: hsl(210, 20%, 92%);
+        --text-primary: hsl(210, 20%, 92%);
+        --text-muted: hsl(215, 15%, 72%);
+        --text-secondary: hsl(215, 15%, 72%);
+        --border-light: hsl(215, 20%, 28%);
+        --input-bg: hsl(222, 22%, 16%);
+        --link-color: hsl(210, 100%, 70%);
+        --overlay-welcome-start: rgba(10, 20, 35, 0.82);
+        --overlay-welcome-end: rgba(5, 14, 24, 0.92);
+        --feedback-success: hsl(142, 62%, 62%);
+        --feedback-danger: hsl(0, 86%, 72%);
+    }
 }
 
 /* Reset and Base Styles */
@@ -21,7 +66,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--background-white);
-    color: var(--text-dark);
+    color: var(--text-primary);
     overflow-x: hidden;
 }
 
@@ -64,7 +109,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 2rem !important;
-    background-color: var(--background-white);
+    background-color: var(--surface-panel);
     min-height: 100vh;
 }
 
@@ -124,13 +169,13 @@ nav {
 .form-header h1 {
     font-size: 2rem;
     font-weight: bold;
-    color: var(--text-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem !important;
     line-height: 1.2;
 }
 
 .form-header p {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -139,6 +184,26 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.login-feedback {
+    min-height: 1.25rem;
+    margin-top: 0.75rem !important;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.login-feedback.text-danger {
+    color: var(--feedback-danger);
+}
+
+.login-feedback.text-success {
+    color: var(--feedback-success);
+}
+
+.login-feedback.text-info {
+    color: var(--text-muted);
 }
 
 .input-group {
@@ -163,7 +228,7 @@ nav {
 }
 
 .input-group input::placeholder {
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 /* Form Options */
@@ -190,14 +255,14 @@ nav {
 
 .remember-me label {
     font-size: 0.875rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
     cursor: pointer;
     user-select: none;
 }
 
 .forgot-password {
     font-size: 0.875rem;
-    color: var(--primary-blue);
+    color: var(--link-color);
     text-decoration: none;
     transition: opacity 0.2s ease;
     white-space: nowrap;
@@ -241,11 +306,11 @@ nav {
 }
 
 .signup-link span {
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 .signup-link a {
-    color: var(--primary-blue);
+    color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s ease;
@@ -264,7 +329,7 @@ nav {
 
 .footer p {
     font-size: 0.875rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     line-height: 1.5;
     display: flex;
     align-items: center;
@@ -303,7 +368,7 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(67, 147, 255, 0.8), rgba(45, 108, 255, 0.9));
+    background: linear-gradient(135deg, var(--overlay-welcome-start), var(--overlay-welcome-end));
     z-index: 1;
 }
 
@@ -425,7 +490,7 @@ nav {
 }
 
 .error-message {
-    color: hsl(0, 84%, 60%);
+    color: var(--feedback-danger);
     font-size: 0.875rem;
     margin-top: 0.25rem !important;
     text-align: left;
@@ -445,6 +510,35 @@ nav {
 .welcome-panel .signup-link a:focus-visible,
 .welcome-panel .welcome-footer a:focus-visible {
     outline-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html[data-theme="dark"] .form-section,
+html[data-theme="dark"] .login-content {
+    background-color: var(--surface-card);
+}
+
+html[data-theme="dark"] .input-group input {
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .login-button {
+    background-color: hsl(45, 100%, 58%);
+    color: hsl(222, 84%, 5%);
+}
+
+html[data-theme="dark"] .login-button:hover {
+    background-color: hsl(45, 100%, 52%);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .form-section,
+    html:not([data-theme="light"]) .login-content {
+        background-color: var(--surface-card);
+    }
+
+    html:not([data-theme="light"]) .input-group input {
+        color: var(--text-primary);
+    }
 }
 
 input:focus-visible {

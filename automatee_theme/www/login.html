@@ -27,10 +27,10 @@
 {% endif %}
 
 {% if not disable_user_pass_login %}
-<button class="login-button" type="submit">{{ _("LOGIN NOW") }}</button>
+<button class="login-button btn btn-sm btn-primary btn-block btn-login" type="submit">{{ _("LOGIN NOW") }}</button>
 {% endif %}
 {% if ldap_settings and ldap_settings.enabled %}
-<button class="login-button btn-ldap-login" type="submit">{{ _("Login with LDAP") }}</button>
+<button class="login-button btn-ldap-login btn btn-sm btn-primary btn-block btn-login" type="submit">{{ _("Login with LDAP") }}</button>
 {% endif %}
 
 
@@ -44,14 +44,14 @@
 
 <!-- Left Panel - Login Form -->
 <div class="login-panel">
-<div class="login-content">
+<div class="login-content page-card">
 <!-- Logo -->
 <div class="logo">
 <img class="app-logo" src="/assets/automatee_theme/images/automatee.png" alt="AutomateE Logo">
 </div>
 
 <!-- Login Form -->
-<div class="form-section">
+<div class="form-section page-card-body">
 <div class="form-header">
 <h1>{{ _("Login") }}</h1>
 <p>{{ _("Fill in the fields below to sign in") }}</p>
@@ -60,6 +60,7 @@
 <form class="login-form form-signin form-login" role="form">
 {{ email_login_body() }}
 </form>
+<div class="login-feedback" aria-live="polite"></div>
 
 <div class="signup-link">
 <span>{{ _("Don't have an account?") }}</span>
@@ -100,6 +101,37 @@
 
 {% block script %}
 <script>{% include "templates/includes/login/login.js" %}</script>
+<script>
+(() => {
+	const feedback = document.querySelector(".login-feedback");
+	if (!window.login || !feedback) return;
+
+	const originalSetStatus = login.set_status;
+	login.set_status = function (message, color) {
+		originalSetStatus.call(this, message, color);
+		feedback.textContent = message || "";
+		feedback.classList.remove("text-danger", "text-success", "text-info");
+		if (color === "red") feedback.classList.add("text-danger");
+		else if (color === "green") feedback.classList.add("text-success");
+		else feedback.classList.add("text-info");
+	};
+
+	[401, 404, 417, 429, 500].forEach((statusCode) => {
+		const existingHandler = login.login_handlers?.[statusCode];
+		if (!existingHandler) return;
+		login.login_handlers[statusCode] = function (xhr, data) {
+			const response = xhr?.responseJSON || data || {};
+			console.warn("[Login] request failed", {
+				statusCode,
+				route: window.location.hash || "#login",
+				message: response?.exception || response?.message || "Request failed",
+				serverMessages: response?._server_messages || null,
+			});
+			return existingHandler.call(this, xhr, data);
+		};
+	});
+})();
+</script>
 {% endblock %}
 
 {% block sidebar %}{% endblock %}

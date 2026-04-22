@@ -4,6 +4,8 @@
 }
 .layout-main {
   display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   width: 100%;
 /*   background-color: red; */
   padding: 10px;
@@ -15,22 +17,33 @@
 .layout-main > .layout-side-section {
   flex: 0 0 20% !important;  /* force 30% width */
   max-width: 20% !important;
+  min-width: 260px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 26px;
   box-sizing: border-box;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 0;
+}
+
+/* On small screens, collapse the sidebar column but keep overlay toggle working */
+@media (max-width: 991.98px) {
+  .layout-main > .layout-side-section {
+    flex: 0 0 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: visible;
+  }
 }
 
 /* Same for main section */
-
-
-
-.list-sidebar{
-/*   background-color: purple; */
-}
 
 .sidebar-item-container{
 /*   background-color: green; */

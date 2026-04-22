@@ -1,7 +1,9 @@
 /* Same for main section */
 .layout-main > .layout-main-section-wrapper {
-  flex: 0 0 77%;
-  max-width: 78%;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin-top: 10px;
 /*   background-color: green; */
   border-radius: 10px;
@@ -9,9 +11,40 @@
   box-sizing: border-box;
 }
 
+/* Keep a split layout only when sidebar element is actually present */
+.layout-main > .layout-side-section + .layout-main-section-wrapper {
+  flex: 0 1 77%;
+  max-width: 78%;
+}
+
+/* If sidebar is absent, always let main section grow full width */
+.layout-main > .layout-main-section-wrapper:only-child {
+  flex: 1 1 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Tablet/mobile should always flow full width */
+@media (max-width: 991.98px) {
+  .layout-main > .layout-main-section-wrapper {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* When sidebar is hidden, let main section fill available width */
+@media (max-width: 1200px) {
+  .layout-main > .layout-main-section-wrapper {
+    flex: 1 1 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 .layout-main > .layout-main-section-wrapper > .layout-main-section{
   background-color: #F1F4F6;
-  border: none;
+  border: 1px solid var(--navbar-border);
 }
 
 /*shortcut links edits*/
@@ -36,8 +69,8 @@
 .shortcut-widget-box:hover {
   
   .widget-head .widget-title span, .widget-head .widget-control svg{
-  color: #FFD203 !important;
-  stroke: #FFD203 !important;
+  color: var(--hover-color) !important;
+  stroke: var(--hover-color) !important;
 }
 
 }
@@ -55,18 +88,11 @@
   height: fit-content !important;
 }
 
-.widget.dashboard-widget-box{
-/*   background-color: green; */
-}
-
 .widget.dashboard-widget-box .widget-title span{
    color: #F29425 !important;
   font-size: 16px;
   font-weight: 700;
 }
-
-
-
 
 .widget.number-widget-box{
 /*     width: 220px; */
@@ -108,18 +134,47 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Do not show card shadow for forms rendered inside modals */
+.modal .form-page,
+.modal-content .form-page,
+.modal-body .form-page {
+  box-shadow: none !important;
+}
 
-.form-page .form-tabs-list{
+
+.form-page .form-tabs-list,
+.form-page .form-tabs-list.form-tabs-sticky-down,
+.form-page .form-tabs-list .nav.form-tabs,
+.form-page .form-tabs-list .nav-item {
   background-color: var(--navbar-bg) !important;
 }
 
-
-.form-page .form-tabs-list ul li a{
-  color: #fff !important;
+.form-page .form-tabs-list .nav-item {
+  border-radius: 0 !important;
+  background-color: var(--navbar-bg) !important;
 }
 
-.form-page .form-tabs-list ul li .active{
-  color: #FFD203 !important;
+.form-page .form-tabs-list .nav-item .nav-link {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
 }
 
+.form-page .form-tabs-list .nav-item.show .nav-link:hover,
+.form-page .form-tabs-list .nav-item.show .nav-link:focus {
+  color: var(--hover-color) !important;
+/*   background-color: rgba(255, 255, 255, 0.12) !important; */
+}
 
+.form-page .form-tabs-list .nav-item.show .nav-link.active{
+  color: var(--hover-color) !important;
+}
+
+.form-page .form-tabs-list .nav-item .nav-link.active,
+.form-page .form-tabs-list .nav-item.show .nav-link {
+  color: #111827 !important;
+/*   background-color: var(--navbar-bg) !important; */
+/*   border: 1px solid #dbeafe !important; */
+}

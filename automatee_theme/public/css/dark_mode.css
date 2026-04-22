@@ -1,0 +1,75 @@
+
+/* Instance-wide dark mode compatibility for AutomateE desk customizations */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .container.page-body,
+html[data-theme="dark"] .layout-main > .layout-main-section-wrapper > .layout-main-section {
+  background-color: var(--surface-base) !important;
+  color: var(--text-color) !important;
+}
+
+html[data-theme="dark"] .layout-main > .layout-side-section,
+html[data-theme="dark"] .widget,
+html[data-theme="dark"] .form-page {
+  background-color: var(--surface-panel) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+
+html[data-theme="dark"] .navbar {
+  border-bottom-color: var(--border-color) !important;
+  box-shadow: 0 2px 8px var(--navbar-shadow) !important;
+}
+
+html[data-theme="dark"] .search-bar .awesomplete input {
+  background-color: var(--surface-input) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+html[data-theme="dark"] .search-bar .awesomplete input::placeholder {
+  color: var(--search-placeholder) !important;
+}
+
+html[data-theme="dark"] .search-bar svg,
+html[data-theme="dark"] .search-bar .search-icon svg,
+html[data-theme="dark"] .search-bar .search-icon use {
+  stroke: var(--icon-muted) !important;
+  color: var(--icon-muted) !important;
+}
+
+html[data-theme="dark"] .dropdown-menu.notifications-list {
+  background-color: var(--surface-elevated) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: var(--menu-shadow) !important;
+}
+
+html[data-theme="dark"] .dropdown-menu.notifications-list .notification-list-header ul li,
+html[data-theme="dark"] .dropdown-menu.notifications-list .notification-list-body,
+html[data-theme="dark"] .dropdown-menu.notifications-list .notification-list-body .title,
+html[data-theme="dark"] .dropdown-menu.notifications-list .notification-list-body .subtitle {
+  color: var(--text-strong) !important;
+}
+
+html[data-theme="dark"] .widget.number-widget-box .widget-head .widget-label .widget-title span {
+  color: var(--text-strong) !important;
+}
+
+html[data-theme="dark"] .form-page .form-tabs-list .nav-item .nav-link.active,
+html[data-theme="dark"] .form-page .form-tabs-list .nav-item.show .nav-link {
+  color: var(--text-color) !important;
+}
+
+html[data-theme="dark"] .awesomplete > ul > li:hover,
+html[data-theme="dark"] .awesomplete > ul > li[aria-selected="true"],
+html[data-theme="dark"] .awesomplete > ul > li.selected,
+html[data-theme="dark"] .awesomplete > ul > div[role="option"]:hover,
+html[data-theme="dark"] .awesomplete > ul > div[role="option"][aria-selected="true"],
+html[data-theme="dark"] .ui-autocomplete .ui-menu-item-wrapper:hover,
+html[data-theme="dark"] .ui-autocomplete .ui-menu-item-wrapper.ui-state-active,
+html[data-theme="dark"] .dropdown-menu .dropdown-item:hover,
+html[data-theme="dark"] .dropdown-menu .dropdown-item:focus {
+  background: rgba(33, 150, 243, 0.22) !important;
+  color: var(--text-strong) !important;
+}
+
+
