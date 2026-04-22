@@ -1,0 +1,79 @@
+/* variables.css - Central CSS Variables */
+:root {
+  /* Primary Colors */
+  --primary-color: #2196F3;
+  --primary-light: #64B5F6;
+  --primary-dark: #1976D2;
+
+
+
+  --hover-color: #FFD203;
+  /* Secondary Colors */
+  --secondary-color: #00BCD4;
+  --secondary-light: #4DD0E1;
+  --secondary-dark: #0097A7;
+  
+  /* Text Colors */
+  --text-color: #2C3E50;
+  --text-muted: #7F8C8D;
+  --text-light: #FFFFFF;
+  --text-success: #27AE60;
+  --text-warning: #F39C12;
+  --text-danger: #E74C3C;
+  
+  /* Background Colors */
+  --bg-color: #F1F4F6;
+  
+  /* Navigation Colors */
+  --navbar-bg: #2196F3;
+  --navbar-border: #E9ECEF;
+  --navbar-shadow: rgba(0, 0, 0, 0.1);
+  --navbar-custom-bg: #2E95ED;
+  --navbar-custom-shadow: rgba(46,149,237,0.08);
+  --navbar-custom-user-bg: #fff;
+  --navbar-custom-user-color: #222;
+  
+  /* Sidebar Colors */
+  --sidebar-bg: #FFFFFF;
+  --sidebar-text: #FFFFFF;
+  --sidebar-hover: #1f3edb;
+  --sidebar-active: #1f3edb;
+  --sidebar-border: #34495E;
+  
+  /* Search Colors */
+  --search-placeholder: #e0e0e0;
+  
+  /* Shadows */
+  --custom-shadow-blue: rgba(33, 150, 243, 0.3);
+
+  /* Desk surface tokens */
+  --surface-base: #F1F4F6;
+  --surface-panel: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --surface-input: #FFFFFF;
+  --border-color: #E9ECEF;
+  --text-strong: #111827;
+  --text-soft: #6b7280;
+  --icon-muted: #6b7280;
+  --menu-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="dark"] {
+  --bg-color: #0f1720;
+  --surface-base: #111b26;
+  --surface-panel: #16212d;
+  --surface-elevated: #1a2633;
+  --surface-input: #1f2d3a;
+  --border-color: #314559;
+  --navbar-border: #314559;
+  --navbar-shadow: rgba(0, 0, 0, 0.35);
+  --text-color: #e5edf5;
+  --text-muted: #9fb1c3;
+  --text-strong: #e5edf5;
+  --text-soft: #9fb1c3;
+  --search-placeholder: #9fb1c3;
+  --icon-muted: #9fb1c3;
+  --navbar-custom-user-bg: #1f2d3a;
+  --navbar-custom-user-color: #e5edf5;
+  --menu-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}

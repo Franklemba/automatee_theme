@@ -1,0 +1,91 @@
+/* navbar.css - Navigation Bar Customization */
+
+/* Basic Navbar Styling */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--navbar-border) !important;
+  box-shadow: 0 2px 4px var(--navbar-shadow) !important;
+  height: 70px !important;
+}
+
+
+.app-logo {
+  height: 44px !important;
+}
+
+/* Navbar Responsive Design */
+@media (max-width: 900px) {
+  .custom-navbar-container {
+    padding: 0 10px !important;
+  }
+  
+  .custom-navbar-search {
+    margin-right: 10px !important;
+    max-width: 200px !important;
+    margin-left: 0 !important;
+  }
+  
+  .custom-navbar-user-box {
+    padding: 6px 8px !important;
+  }
+}
+
+
+.search-bar .awesomplete input {
+    width: 100% !important;
+    padding-left: 36px;
+    height: 28px;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    letter-spacing: 0.02em;
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #d1d5db !important;
+}
+
+.search-bar .awesomplete input::placeholder {
+    color: #6b7280 !important;
+}
+
+.search-bar svg,
+.search-bar .search-icon svg,
+.search-bar .search-icon use {
+    stroke: #6b7280 !important;
+    color: #6b7280 !important;
+}
+
+.dropdown-menu.notifications-list {
+   background-color: #ffffff !important;
+   border: 1px solid #e5e7eb !important;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+.dropdown-menu.notifications-list .notification-list-header ul li  {
+   color: #111827 !important;
+}
+.dropdown-menu.notifications-list .notification-list-header ul li:hover {
+/*    color: black !important; */
+     color: #FFD203 !important;
+    font-weight: 600; 
+}
+
+.dropdown-menu.notifications-list .notification-list-header ul .active  {
+    color: #FFD203 !important;
+    font-weight: 600; 
+}
+
+.dropdown-menu.notifications-list .notification-list-body .notification-timestamp {
+    color: #FFD203 !important;
+}
+
+.dropdown-menu.notifications-list .notification-list-body .list-footer .full-log-btn {
+    color: #FFD203 !important;
+}
+
+.dropdown-menu.notifications-list .notification-list-body,
+.dropdown-menu.notifications-list .notification-list-body .title,
+.dropdown-menu.notifications-list .notification-list-body .subtitle {
+    color: #111827 !important;
+}
+
